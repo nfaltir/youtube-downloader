@@ -23,17 +23,17 @@ def main():
 
     if st.button("download"):
         video_objects = YouTube(link)
-        st.write("Title of video: " + str(video_objects.title))
-        st.write("Number of views: " + str(video_objects.views))
-
         try:
             if option == "audio":
-                video_objects.streams.get_audio_only().download()
+                video_objects.streams.get_audio_only().download("./audios")
+                st.success("Audio successfully downloaded")
             elif option == "video":
-                video_objects.streams.get_highest_resolution().download()
+                video_objects.streams.get_highest_resolution().download("./videos")
+                st.success("Video successfully downloaded")
+                
         except:
-            st.error("there was a problem downloading the video!")
-        st.success("Video successfully downloaded")
+            st.error(f"there was a problem downloading the video!{KeyError}")
+        
 
     st.markdown("<hr><br>", unsafe_allow_html=True)
 
