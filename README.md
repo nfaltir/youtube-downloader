@@ -22,8 +22,11 @@ streamlit==1.16.0
 <img src="a.png"
      alt="app demo"
      style="float: left; margin-right: 10px; margin-bottom: 50px;" />
-
-
 <br>
 
-VISIT 👉 <a href="https://tinyurl.com/2jquu7br " target="_blank">Demo Site</a>
+
+## Setup and Running App
+
+- install required packages `pip3 install -r requirements.txt`
+- Run app locally {port:8501} by default, `streamlit run app.py`
+

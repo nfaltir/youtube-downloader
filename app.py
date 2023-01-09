@@ -26,10 +26,14 @@ def main():
         st.write("Title of video: " + str(video_objects.title))
         st.write("Number of views: " + str(video_objects.views))
 
-        if option == "audio":
-            video_objects.streams.get_audio_only().download()
-        elif option == "video":
-            video_objects.streams.get_highest_resolution().download()
+        try:
+            if option == "audio":
+                video_objects.streams.get_audio_only().download()
+            elif option == "video":
+                video_objects.streams.get_highest_resolution().download()
+        except:
+            st.error("there was a problem downloading the video!")
+        st.success("Video successfully downloaded")
 
     st.markdown("<hr><br>", unsafe_allow_html=True)
 
