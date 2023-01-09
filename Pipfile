@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 pytube = "*"
 streamlit = "*"
+watchdog = "*"
+pipreqs = "*"
 
 [dev-packages]
 
